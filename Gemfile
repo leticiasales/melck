@@ -50,3 +50,4 @@ end
 gem 'devise'
 gem 'activeadmin'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
+gem 'sassc-rails'
