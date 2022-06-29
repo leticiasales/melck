@@ -1,0 +1,31 @@
+version: "3.9"
+services:
+  postgres:
+    image: postgres:12
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: password
+  web:
+    build: .
+    command: heroku local -f Procfile.dev
+    environment:
+      - PGHOST=postgres
+      - PGUSER=postgres
+      - PGPASSWORD=password
+    volumes:
+      - .:/app:cached
+      - bundle:/usr/local/bundle
+      - rails_cache:/app/tmp/cache
+    ports:
+      - 3000:3000
+      - 3001:3001
+    depends_on:
+      - postgres
+
+volumes:
+  bundle:
+  postgres_data:
+  rails_cache:
