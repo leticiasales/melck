@@ -6,13 +6,13 @@ FROM ruby:3.0.4
 # - git: so we can fetch gems from github in the Gemfile
 # - cmake: so we can build the rugged gem
 RUN apt-get update -qq \
-  && apt-get install -y postgresql-client libxslt-dev libxml2-dev git cmake wkhtmltopdf
+  && apt-get install -y postgresql-client libxslt-dev libxml2-dev git cmake
 
 # Install node v14 per https://github.com/nodesource/distributions
-RUN curl -fsSL https://deb.nodesource.com/setup_14.x | bash - && apt-get install -y nodejs
+RUN curl -fsSL https://deb.nodesource.com/setup_14.x | bash - && apt-get install -y nodejs 
 
 # Install heroku CLI: so we can run `heroku local` as our command
-RUN npm install -g heroku
+RUN npm install -g heroku yarn
 
 WORKDIR /app
 

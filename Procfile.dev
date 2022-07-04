@@ -1,2 +1,2 @@
-web: PORT=3000 npm --prefix client start
+web: PORT=3000 yarn --cwd client start
 api: bin/rails s -p 3001 -b '0.0.0.0'
