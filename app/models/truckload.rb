@@ -1,0 +1,2 @@
+class Truckload < ApplicationRecord
+end

@@ -1,0 +1,33 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  truckload: MyString
+  weight: 1.5
+  origin: MyString
+  destiny: MyString
+  company: MyString
+  charging_time: 2022-07-11 14:01:53
+  delivery_date: 2022-07-11
+  vehicle: MyString
+  truck_body: MyString
+  material: MyString
+  quantity: 1
+  total_weight: 1.5
+  price: MyString
+  need_to_track: 
+
+two:
+  truckload: MyString
+  weight: 1.5
+  origin: MyString
+  destiny: MyString
+  company: MyString
+  charging_time: 2022-07-11 14:01:53
+  delivery_date: 2022-07-11
+  vehicle: MyString
+  truck_body: MyString
+  material: MyString
+  quantity: 1
+  total_weight: 1.5
+  price: MyString
+  need_to_track: 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_29_153250) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_11_142705) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -38,6 +38,39 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_29_153250) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  end
+
+  create_table "drivers", force: :cascade do |t|
+    t.string "name"
+    t.string "phone"
+    t.string "vehicle"
+    t.string "truck_body"
+    t.string "truck_size"
+    t.string "tracker"
+    t.string "origin"
+    t.string "favorite_destination"
+    t.string "observations"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "truckloads", force: :cascade do |t|
+    t.string "truckload"
+    t.float "weight"
+    t.string "origin"
+    t.string "destiny"
+    t.string "company"
+    t.time "charging_time"
+    t.date "delivery_date"
+    t.string "vehicle"
+    t.string "truck_body"
+    t.string "material"
+    t.integer "quantity"
+    t.float "total_weight"
+    t.string "price"
+    t.binary "need_to_track"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
