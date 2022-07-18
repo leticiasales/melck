@@ -61,4 +61,9 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
+
+  # Internationalization
+  config.i18n.enforce_available_locales = false
+  config.i18n.available_locales = ["pt-BR"]
+  config.i18n.default_locale = :'pt-BR'
 end
