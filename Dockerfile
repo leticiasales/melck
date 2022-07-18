@@ -12,7 +12,7 @@ RUN apt-get update -qq \
 RUN curl -fsSL https://deb.nodesource.com/setup_14.x | bash - && apt-get install -y nodejs 
 
 # Install heroku CLI: so we can run `heroku local` as our command
-RUN npm install -g heroku yarn
+RUN npm install -g heroku yarn react-scripts
 
 WORKDIR /app
 
