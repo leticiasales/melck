@@ -2,7 +2,7 @@ import './FormTruckloadSearch.css';
 
 function FormTruckloadSearch() {
   return (
-    <div className="w-screen">
+    <div className="container mx-auto w-screen">
       <div className="pt-8 mt-8 pb-4 mb-4 text-center text-white">
         <h1 className="block py-2 my-2 text-3xl font-black uppercase">O jeito mais fácil de conseguir sua carga</h1>
         <h2 className="block font-semibold text-lg py-2 my-2">Encontre cargas de acordo com o seu caminhão, origem ou destino</h2>
