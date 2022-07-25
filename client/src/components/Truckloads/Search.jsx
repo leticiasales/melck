@@ -1,7 +1,33 @@
 import React, { Component } from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import { Autocomplete, TextField } from "@mui/material";
 
 class TruckloadsSearch extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      cities: [],
+    };
+  }
+
+  getCitiesList() {
+    fetch("https://servicodados.ibge.gov.br/api/v1/localidades/municipios?orderBy=nome&view=nivelado")
+     .then(response => {
+       return response.json()
+      })
+      .then(data => {
+        const array = data.map(item => item["municipio-nome"]);
+
+        this.setState({
+          cities: [...new Set(array)],
+        });
+      })
+  };
+
+  componentDidMount() {
+    this.getCitiesList();
+  }
+
   render() {
     return (
       <div className="container">
@@ -10,10 +36,20 @@ class TruckloadsSearch extends Component {
           <h2 className="block font-semibold text-lg py-2 my-2">Encontre cargas de acordo com o seu caminhão, origem ou destino</h2>
         </div>
         <form className="w-full max-w-5xl mx-auto">
-          <div className="flex flex-wrap gap-y-4 w-3/4 md:w-full mx-auto mb-2">
-            <div className="w-full md:w-1/2 px-3">
-              <input className="appearance-none block w-full bg-white text-black border border-white rounded-md py-2 px-4 mb-3 leading-tight placeholder-black focus:outline-none focus:bg-white focus:border-primary" id="grid-first-name" type="text" placeholder="Origem"></input>
-            </div>
+          <div className="flex flex-wrap gap-y-4 w-3/4 md:w-full mx-auto mb-2 px-3">
+            <Autocomplete
+              id="origin"
+              autoComplete
+              className="appearance-none block w-full md:w-1/2 mb-3 leading-tight"
+              options={this.state.cities}
+              sx={{ padding: 0 }}
+              renderInput={(params) =>
+                <TextField {...params}
+                  className="bg-white rounded-md py-0"
+                  placeholder="Origem"
+                  size="small"
+                />}
+              />
             <div className="w-full md:w-1/2 px-3">
               <input className="appearance-none block w-full bg-white text-black border border-white rounded-md py-2 px-4 leading-tight placeholder-black focus:outline-none focus:bg-white focus:border-primary" id="grid-last-name" type="text" placeholder="Destino"></input>
             </div>
