@@ -9,28 +9,18 @@
 
 // Active Admin's got SASS!
 @import "active_admin/mixins";
-// @import "active_admin/base";
-@import "arctic_admin/base";
+@import "active_admin/base";
+@import "active_admin_flat_skin";
 
 // Overriding any non-variable Sass must be done after the fact.
 // For example, to change the default status-tag color:
 //
 //   .status_tag { background: #6090DB; }
 
-form fieldset ol > li {
-  display: flex;
-}
-
-form input[type="text"],
-form input[type="password"],
-form input[type="email"],
-form input[type="number"],
-form input[type="url"],
-form input[type="tel"],
-form input[type="date"],
-form input[type="time"],
-form input[type="date"],
-form textarea {
-  width: auto;
-  flex-grow: 1;
+#header.header #tabs.header-item.tabs li {
+  margin-bottom: 8px !important;
+  
+  a {
+    height: auto;
+  }
 }
