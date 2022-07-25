@@ -51,7 +51,7 @@ gem 'devise'
 gem 'activeadmin'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'sassc-rails'
-gem 'arctic_admin'
+gem 'active_admin_flat_skin'
 
 # Custom
 gem 'phony_rails'
