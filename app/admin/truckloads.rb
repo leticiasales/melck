@@ -1,13 +1,13 @@
 ActiveAdmin.register Truckload do
-  permit_params :truckload, :weight, :origin, :destiny, :company, :charging_time, :delivery_date, :vehicle, :truck_body, :material, :quantity, :total_weight, :price, :need_to_track
+  permit_params :title, :weight, :origin, :destination, :company, :charging_time, :delivery_date, :vehicle, :truck_body, :material, :quantity, :total_weight, :price, :need_to_track
 
   index do
     selectable_column
     id_column
-    column :truckload
+    column :title
     column :weight
     column :origin
-    column :destiny
+    column :destination
     column :company
     column :charging_time
     column :delivery_date
@@ -23,10 +23,10 @@ ActiveAdmin.register Truckload do
     actions
   end
 
-  filter :truckload
+  filter :title
   filter :weight
   filter :origin
-  filter :destiny
+  filter :destination
   filter :company
   filter :charging_time
   filter :delivery_date
@@ -40,10 +40,10 @@ ActiveAdmin.register Truckload do
 
   form do |f|
     f.inputs do
-      f.input :truckload
+      f.input :title
       f.input :weight
       f.input :origin
-      f.input :destiny
+      f.input :destination
       f.input :company
       f.input :charging_time, :as => :time_picker
       f.input :delivery_date, :as => :date_picker

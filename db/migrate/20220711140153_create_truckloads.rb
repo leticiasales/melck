@@ -1,10 +1,10 @@
 class CreateTruckloads < ActiveRecord::Migration[7.0]
   def change
     create_table :truckloads do |t|
-      t.string :truckload
+      t.string :title
       t.float :weight
       t.string :origin
-      t.string :destiny
+      t.string :destination
       t.string :company
       t.time :charging_time
       t.date :delivery_date

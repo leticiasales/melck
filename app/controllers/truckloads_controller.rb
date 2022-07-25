@@ -46,6 +46,6 @@ class TruckloadsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def truckload_params
-      params.require(:truckload).permit(:truckload, :weight, :origin, :destiny, :company, :charging_time, :delivery_date, :vehicle, :truck_body, :material, :quantity, :total_weight, :price, :need_to_track)
+      params.require(:truckload).permit(:title, :weight, :origin, :destination, :company, :charging_time, :delivery_date, :vehicle, :truck_body, :material, :quantity, :total_weight, :price, :need_to_track)
     end
 end

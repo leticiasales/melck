@@ -39,6 +39,7 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem "pry"
 end
 
 group :development do
@@ -52,6 +53,7 @@ gem 'activeadmin'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'sassc-rails'
 gem 'active_admin_flat_skin'
+gem 'font-awesome-rails'
 
 # Custom
 gem 'phony_rails'

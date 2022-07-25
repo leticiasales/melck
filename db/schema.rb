@@ -55,10 +55,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_11_142705) do
   end
 
   create_table "truckloads", force: :cascade do |t|
-    t.string "truckload"
+    t.string "title"
     t.float "weight"
     t.string "origin"
-    t.string "destiny"
+    t.string "destination"
     t.string "company"
     t.time "charging_time"
     t.date "delivery_date"

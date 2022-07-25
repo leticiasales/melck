@@ -11,16 +11,30 @@
 @import "active_admin/mixins";
 @import "active_admin/base";
 @import "active_admin_flat_skin";
+@import "font-awesome";
 
 // Overriding any non-variable Sass must be done after the fact.
 // For example, to change the default status-tag color:
 //
 //   .status_tag { background: #6090DB; }
 
-#header.header #tabs.header-item.tabs li {
-  margin-bottom: 8px !important;
-  
-  a {
-    height: auto;
+#header.header {
+  width: 200px;
+
+  #tabs.header-item.tabs li {
+    margin-bottom: 8px !important;
+
+    a {
+      height: auto;
+    }
   }
+}
+
+#title_bar.title_bar,
+#active_admin_content {
+  width: calc(100% - 200px);
+}
+
+form.filter_form .filter_form_field.select_and_search input[type="text"] {
+  width: 200px;
 }
