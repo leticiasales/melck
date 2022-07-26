@@ -81,7 +81,7 @@ class TruckloadsList extends Component {
                 renderInput={(params) =>
                   <TextField {...params}
                     className="bg-white rounded-md py-0"
-                    placeholder="Destino"
+                    placeholder="Caminhão"
                     size="small"
                   />}
                 />
