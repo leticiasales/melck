@@ -5,22 +5,33 @@ ActiveAdmin.register Truckload do
     selectable_column
     id_column
     column :title
-    column :weight
     column :origin
     column :destination
-    column :company
-    column :charging_time
-    column :delivery_date
-    column :vehicle
-    column :truck_body
     column :material
-    column :quantity
     column :total_weight
-    column :price do |t|
-      number_to_currency t.price
-    end
-    column :need_to_track
     actions
+  end
+
+  show do
+    attributes_table do
+      row :id
+      row :title
+      row :weight
+      row :origin
+      row :destination
+      row :company
+      row :charging_time
+      row :delivery_date
+      row :vehicle
+      row :truck_body
+      row :material
+      row :quantity
+      row :total_weight
+      row :price do |t|
+        number_to_currency t.price
+      end
+      row :need_to_track
+    end
   end
 
   filter :title
