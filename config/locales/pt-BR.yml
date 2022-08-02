@@ -253,6 +253,9 @@ pt-BR:
         unlock_token: Token de desbloqueio
         updated_at: Atualizado em
     models:
+      city:
+        one: Cidade
+        other: Cidades
       comment:
         one: Comentário
         other: Comentários
@@ -263,6 +266,9 @@ pt-BR:
         one: Carga
         other: Cargas
     attributes:
+      city: 
+        name: Nome
+        uf: UF
       driver:
         name: Nome
         phone: Telefone

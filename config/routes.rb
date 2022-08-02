@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :cities
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   
@@ -8,6 +9,7 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   scope :api do
+    resources :cities
     resources :drivers
     resources :truckloads
   end
