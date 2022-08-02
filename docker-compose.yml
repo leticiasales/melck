@@ -15,6 +15,7 @@ services:
       - PGHOST=postgres
       - PGUSER=postgres
       - PGPASSWORD=password
+      - IBGE_CIDADES=https://servicodados.ibge.gov.br/api/v1/localidades/municipios?orderBy=nome&view=nivelado
     volumes:
       - .:/app:cached
       - bundle:/usr/local/bundle

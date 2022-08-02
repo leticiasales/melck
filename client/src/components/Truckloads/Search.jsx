@@ -1,3 +1,5 @@
+import axios from "axios";
+
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Autocomplete, TextField } from "@mui/material";
@@ -11,18 +13,15 @@ class TruckloadsSearch extends Component {
   }
 
   getCitiesList() {
-    fetch("https://servicodados.ibge.gov.br/api/v1/localidades/municipios?orderBy=nome&view=nivelado")
-     .then(response => {
-       return response.json()
-      })
-      .then(data => {
-        const array = data.map(item => item["municipio-nome"]);
-
+    axios
+      .get("/api/cities")
+      .then((res) => {
         this.setState({
-          cities: [...new Set(array)],
+          cities: res.data.map((c) => `${c.name} - ${c.uf}`)
         });
       })
-  };
+      .catch((error) => console.log(error));
+  }
 
   componentDidMount() {
     this.getCitiesList();
