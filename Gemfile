@@ -57,3 +57,4 @@ gem 'font-awesome-rails'
 
 # Custom
 gem 'phony_rails'
+gem 'rest-client'
