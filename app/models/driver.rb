@@ -2,6 +2,13 @@ class Driver < ApplicationRecord
   phony_normalize :phone, default_country_code: 'BR'
   before_save :titleize_attributes
 
+  validates :name,
+            :vehicle,
+            :truck_body,
+            :phone, :presence => true
+
+  validates :phone, :presence => true, :uniqueness => true
+
   private
     def titleize_attributes
       self.name = self.name.titleize if self.name
