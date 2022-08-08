@@ -10,8 +10,6 @@ ActiveAdmin.register Driver do
     end
     column :vehicle
     column :truck_body
-    column :tracker
-    column :origin
     actions
   end
 
@@ -34,7 +32,7 @@ ActiveAdmin.register Driver do
 
   filter :name
   filter :phone
-  filter :vehicle, as: :select, collection: ["Van", "Toco", "Truck", "Bitruck", "Carreta", "Carreta Ls", "Vanderleia", "Bitrem"]
+  filter :vehicle, as: :select, collection: ["Van", "Toco", "Truck", "Bitruck", "Carreta", "Carreta Ls", "Vanderleia", "Bitrem", "3/4"]
   filter :truck_body, as: :select, collection: ["Furgão", "Baú", "Sider", "Grade Baixa", "Graneleiro", "Camada Fria", "Prancha"]
   filter :truck_size
   filter :tracker, as: :select, collection: ["ONIXSAT", "OMNILINK", "SASCAR", "AUTOTRAC", "JABUR", "SIGHRA", "Não Possui"]
@@ -46,7 +44,7 @@ ActiveAdmin.register Driver do
     f.inputs do
       f.input :name
       f.input :phone
-      f.input :vehicle, as: :select, collection: ["Van", "Toco", "Truck", "Bitruck", "Carreta", "Carreta Ls", "Vanderleia", "Bitrem"]
+      f.input :vehicle, as: :select, collection: ["Van", "Toco", "Truck", "Bitruck", "Carreta", "Carreta Ls", "Vanderleia", "Bitrem", "3/4"]
       f.input :truck_body, as: :select, collection: ["Furgão", "Baú", "Sider", "Grade Baixa", "Graneleiro", "Camada Fria", "Prancha"]
       f.input :truck_size
       f.input :tracker, as: :select, collection: ["ONIXSAT", "OMNILINK", "SASCAR", "AUTOTRAC", "JABUR", "SIGHRA", "Não Possui"]
