@@ -9,6 +9,7 @@ class TruckloadsSearch extends Component {
     super(props);
     this.state = {
       cities: [],
+      vehicles: ["Van", "Toco", "Truck", "Bitruck", "Carreta", "Carreta Ls", "Vanderleia", "Bitrem", "3/4"]
     };
   }
 
@@ -57,14 +58,10 @@ class TruckloadsSearch extends Component {
             <div className="relative w-full">
               <select required className="appearance-none block px-3 w-full bg-white mb-0 text-black border border-white rounded-md py-2 px-4 mb-3 leading-tight font-medium focus:outline-none focus:bg-white focus:border-primary" id="grid-state" defaultValue="" >
                 <option value="">Escolha a categoria do seu caminhão</option>
-                <option value="Van">Van</option>
-                <option value="Toco">Toco</option>
-                <option value="Truck">Truck</option>
-                <option value="Bitruck">Bitruck</option>
-                <option value="Carreta">Carreta</option>
-                <option value="Carreta Ls">Carreta Ls</option>
-                <option value="Vanderleia">Vanderleia</option>
-                <option value="Bitrem">Bitrem</option>
+                {
+                  this.state.vehicles.map((vehicle, i) => 
+                    <option value={vehicle} key={i}>{vehicle}</option>)
+                }
               </select>
               <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                 <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
