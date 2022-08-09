@@ -253,6 +253,9 @@ pt-BR:
         unlock_token: Token de desbloqueio
         updated_at: Atualizado em
     models:
+      admin_user:
+        one: Usuário
+        other: Usuários
       city:
         one: Cidade
         other: Cidades
@@ -282,10 +285,10 @@ pt-BR:
         created_at: Criado em
         updated_at: Modificado em
       truckload:
-        truckload: Carga
+        title: Título da Carga
         weight: Peso
         origin: Origem
-        destiny: Destino
+        destination: Destino
         company: Empresa
         charging_time: Hora limite
         delivery_date: Data de Entrega
