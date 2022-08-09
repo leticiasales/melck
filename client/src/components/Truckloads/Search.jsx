@@ -33,13 +33,14 @@ class TruckloadsSearch extends Component {
       <div className="container py-8 my-8 md:py-16 md:my-16">
         <div className="w-full max-w-5xl mx-auto pb-4 mb-4 text-center text-white">
           <h1 className="block py-2 my-2 text-3xl font-black uppercase">O jeito mais fácil de conseguir sua carga</h1>
-          <h2 className="block font-semibold text-lg py-2 my-2">Encontre cargas de acordo com o seu caminhão, origem ou destino</h2>
+          <h2 className="block font-semibold text-md py-2 my-2 uppercase">Encontre cargas de acordo com o seu caminhão, origem ou destino</h2>
         </div>
         <form className="w-full max-w-5xl mx-auto">
           <div className="flex md:flex-nowrap flex-wrap gap-y-1 md:gap-y-4 md:gap-x-2 w-full mx-auto mb-4 px-3">
             <Autocomplete
               id="origin"
               name="origin"
+              required
               autoComplete
               className="appearance-none w-full block mb-3 leading-tight"
               options={ this.state.cities }
