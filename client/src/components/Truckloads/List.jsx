@@ -1,17 +1,24 @@
-import truckloadListBg from "../../assets/img/truckload-list-bg.png"
-import paper from "../../assets/img/paper.png"
-import axios from "axios";
-import { Link } from 'react-router-dom';
-import { Autocomplete, TextField } from "@mui/material";
 import React, { Component } from "react";
+import axios from "axios";
+
+import { Link } from "react-router-dom";
+import { Autocomplete, TextField } from "@mui/material";
+import Item from "./Item";
+import Modal from "../Modal";
+import "./list.css";
+import left from "../../assets/img/left.svg"
+import right from "../../assets/img/right.svg"
+
+import truckloadListBg from "../../assets/img/truckload-list-bg.png"
 
 class TruckloadsList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      truckloads: [],
-      cities: [],
       categories: ["Van", "Toco", "Truck", "Bitruck", "Carreta", "Carreta Ls", "Vanderleia", "Bitrem"],
+      cities: [],
+      modalTruckload: false,
+      truckloads: [],
     };
   }
 
@@ -25,35 +32,46 @@ class TruckloadsList extends Component {
   }
 
   getCitiesList() {
-    fetch("https://servicodados.ibge.gov.br/api/v1/localidades/municipios?orderBy=nome&view=nivelado")
-     .then(response => {
-       return response.json()
-      })
-      .then(data => {
-        const array = data.map(item => item["municipio-nome"]);
-
+    axios
+      .get("/api/cities")
+      .then((res) => {
         this.setState({
-          cities: [...new Set(array)],
+          cities: res.data.map((c) => `${c.name} - ${c.uf}`)
         });
       })
-  };
+      .catch((error) => console.log(error));
+  }
 
   componentDidMount() {
     this.search();
     this.getCitiesList();
   }
 
+  openModal = (truckload) => {
+    this.setState({
+      modalTruckload: truckload
+    });
+  }
+
+  closeModal = () => {
+    this.setState({
+      modalTruckload: false
+    });
+  }
+
   render() {
     return (
       <div>
         <div className="flex justify-center">
-          <img src={ truckloadListBg } className="w-2/3"></img>
+          <img src={ truckloadListBg } alt="avatar cargas" className="w-5/6"></img>
         </div>
         <div className="bg-secondary py-12">
           <form className="max-w-5xl mx-auto">
             <div className="grid md:grid-cols-4 gap-4 w-full px-4 md:px-24">
               <Autocomplete
                 id="origin-b"
+                name="origin-b"
+                required
                 className="appearance-none block text-black leading-tight"
                 options={this.state.cities}
                 renderInput={(params) =>
@@ -65,6 +83,7 @@ class TruckloadsList extends Component {
                 />
               <Autocomplete
                 id="destination-b"
+                name="destination-b"
                 className="appearance-none block text-black leading-tight"
                 options={this.state.cities}
                 renderInput={(params) =>
@@ -76,6 +95,8 @@ class TruckloadsList extends Component {
                 />
               <Autocomplete
                 id="categories-b"
+                name="categories-b"
+                required
                 className="appearance-none block text-black leading-tight"
                 options={this.state.categories}
                 renderInput={(params) =>
@@ -92,35 +113,24 @@ class TruckloadsList extends Component {
          </form>
         </div>
         <div className="bg-white">
-          {this.state.truckloads.map((truckload) => {
-            return (
-              <div className="py-2 leading-3">
-                <div className="flex flex-start mx-4 md:mx-96 py-2 px-4 border-2 rounded-md border-tertiary">
-                  <div className="bg-tertiary rounded-md">
-                    <img src={ paper } className="w-20"></img>
-                  </div>
-                  <div className="flex flex-col justify-center ml-2">
-                    <span className="text-xs" truckload={truckload} key={truckload.company}>
-                      {truckload.company}
-                    </span>
-                    <span className="text-xs" truckload={truckload} key={truckload.id}>
-                      {truckload.truckload}
-                    </span>
-                    <span className="text-xs" truckload={truckload} key={truckload.weight}>
-                      {truckload.weight}
-                    </span>  
-                    <span className="text-xs" truckload={truckload} key={truckload.origin}>
-                      {truckload.origin}
-                    </span>
-                    <span className="text-xs" truckload={truckload} key={truckload.origin}>
-                      {truckload.destiny}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+          {
+            this.state.truckloads.map((truckload) => {
+              return <Item onClick={ this.openModal(truckload) }truckload={ truckload } key={ truckload.id } />
+            })
+          }
         </div>
+        <div className="bg-white flex justify-center pt-2 pb-4">
+          <button>
+            <img src={ left } alt="página anterior" className="w-5"></img>
+          </button>
+          <span className="text-xl text-gray-500 px-1"> 
+            x
+          </span>
+          <button>
+            <img src={ right } alt="próxima página" className="w-5"></img>
+          </button>
+        </div>
+        <Modal truckload={ this.state.modalTruckload } closeModal={ this.closeModal } />
       </div>
     );
   }
