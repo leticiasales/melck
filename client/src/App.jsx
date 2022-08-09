@@ -1,10 +1,10 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import './App.css';
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
 
-import Header from './components/Header';
-import TruckloadsSearch from './components/Truckloads/Search';
-import TruckloadsList from './components/Truckloads/List';
+import Header from "./components/Header";
+import TruckloadsSearch from "./components/Truckloads/Search";
+import TruckloadsList from "./components/Truckloads/List";
 
 function App() {
   return (
