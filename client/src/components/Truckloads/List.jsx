@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { Autocomplete, TextField } from "@mui/material";
 import Item from "./Item";
 import Modal from "../Modal";
-import "./list.css";
+import "./List.css";
 import left from "../../assets/img/left.svg"
 import right from "../../assets/img/right.svg"
 
@@ -115,7 +115,7 @@ class TruckloadsList extends Component {
         <div className="bg-white">
           {
             this.state.truckloads.map((truckload) => {
-              return <Item onClick={ this.openModal(truckload) }truckload={ truckload } key={ truckload.id } />
+              return <Item truckload={ truckload } openModal={ this.openModal }key={ truckload.id } />
             })
           }
         </div>

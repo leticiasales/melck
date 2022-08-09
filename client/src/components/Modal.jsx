@@ -1,12 +1,34 @@
 import React, { Component } from "react";
 import "../Modal.css";
 
-import paper from "../assets/img/paper.png"
+import furgao from "../assets/img/furgao.png"
+import bau from "../assets/img/bau.png"
+import sider from "../assets/img/sider.png"
+import gradeBaixa from "../assets/img/gradeBaixa.png"
+import graneleiro from "../assets/img/graneleiro.png"
+import camaraFria from "../assets/img/camaraFria.png"
+
 import whatsIcon from "../assets/img/whatsapp-icon.svg"
 import close from "../assets/img/close.svg"
 
 class Modal extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      iconsMap: {
+        "Furgão": furgao,
+        "Baú": bau,
+        "Sider": sider,
+        "Grade Baixa": gradeBaixa,
+        "Graneleiro": graneleiro,
+        "Câmara Fria": camaraFria,
+        "Prancha": furgao,
+      }
+    };
+  }
+
   render() {
+    const { iconsMap } = this.state;
     const { closeModal, truckload } = this.props;
     const showHideClassName = truckload ? "modal block" : "modal hidden";
 
@@ -21,7 +43,7 @@ class Modal extends Component {
           </div>
           <div className="flex mt-4">
             <div className="bg-tertiary rounded-md px-4 py-4">
-              <img alt="ícone de carga" src={ paper } className="w-36">
+              <img alt="ícone de carga" src={ iconsMap[truckload.truck_body] } className="w-36">
               </img>
             </div>
             <div className="flex flex-col px-4 py-4">
