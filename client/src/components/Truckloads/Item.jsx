@@ -30,27 +30,27 @@ class Item extends Component {
     const { iconsMap } = this.state;
 
     return (
-      <button className="w-full my-2 leading-3" onClick={ () => openModal(truckload) }>
+      <button className="w-full py-2 leading-3" onClick={ () => openModal(truckload) }>
         <div className="flex flex-start sm:max-w-sm md:max-w-lg mx-4 sm:mx-auto py-4 px-4 border-2 rounded-md border-tertiary">
           <div className="bg-tertiary rounded-md px-2 py-2">
             <img src={ iconsMap[truckload.truck_body] } alt="ícone de carga" className="w-20"></img>
           </div>
           <div className="flex flex-col justify-center items-start ml-2">
-            <p className="text-xs uppercase">
+            <span className="text-xs">
               {truckload.company}
-            </p>
-            <p className="text-xs uppercase">
+            </span>
+            <span className="text-xs">
               {truckload.truckload}
-            </p>
-            <p className="text-xs uppercase">
+            </span>
+            <span className="text-xs">
               {truckload.weight}
-            </p>  
-            <p className="text-xs uppercase">
+            </span>  
+            <span className="text-xs">
               {truckload.origin}
-            </p>
-            <p className="text-xs uppercase">
+            </span>
+            <span className="text-xs">
               {truckload.destiny}
-            </p>
+            </span>
           </div>
         </div>
       </button>
