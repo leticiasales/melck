@@ -16,6 +16,8 @@ services:
       - PGUSER=postgres
       - PGPASSWORD=password
       - IBGE_CIDADES=https://servicodados.ibge.gov.br/api/v1/localidades/municipios?orderBy=nome&view=nivelado
+      - WPP_PHONE=5541998192443
+      - WPP_MESSAGE=Quero transportar a carga 
     volumes:
       - .:/app:cached
       - bundle:/usr/local/bundle
