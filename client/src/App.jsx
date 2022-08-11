@@ -7,15 +7,14 @@ import TruckloadsList from "./components/Truckloads/List";
 
 function App() {
   return (
-    <div>    
+    <div className="flex flex-col bg-pattern">
       <BrowserRouter>
         <Header />
         <Routes>
           <Route path="/">
-            <Route index />
+            <Route index element={<TruckloadsSearch />}/>
             <Route path="cargas">
-              <Route index element={<TruckloadsSearch />} />
-              <Route path=":category" element={<TruckloadsList />} />
+              <Route index element={<TruckloadsList />} />
             </Route>
           </Route>
         </Routes>
