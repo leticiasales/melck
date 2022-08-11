@@ -45,7 +45,6 @@ class TruckloadsList extends Component {
   }
 
   search() {
-    console.log("state:", this.state);
     let { origin, destination, vehicle, page } = this.state;
 
     const params = {
@@ -81,7 +80,7 @@ class TruckloadsList extends Component {
 
   componentDidMount() {
     const params = new URLSearchParams(window.location.search);
-    console.log(params);
+
     this.setState({
       origin: params.get("origin"),
       destination: params.get("destination"),
