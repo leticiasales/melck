@@ -30,28 +30,26 @@ class Item extends Component {
     const { iconsMap } = this.state;
 
     return (
-      <button className="w-full py-2 leading-3" onClick={ () => openModal(truckload) }>
-        <div className="flex flex-start sm:max-w-sm md:max-w-lg mx-4 sm:mx-auto py-4 px-4 border-2 rounded-md border-tertiary">
-          <div className="bg-tertiary rounded-md px-2 py-2">
-            <img src={ iconsMap[truckload.truck_body] } alt="ícone de carga" className="w-20"></img>
-          </div>
-          <div className="flex flex-col justify-center items-start ml-2">
-            <span className="text-xs">
-              {truckload.company}
-            </span>
-            <span className="text-xs">
-              {truckload.truckload}
-            </span>
-            <span className="text-xs">
-              {truckload.weight}
-            </span>  
-            <span className="text-xs">
-              {truckload.origin}
-            </span>
-            <span className="text-xs">
-              {truckload.destiny}
-            </span>
-          </div>
+      <button className="flex flex-start sm:max-w-sm md:max-w-lg mx-4 sm:mx-auto my-2 py-4 px-4 border-2 rounded-md border-tertiary hover:bg-gray-100" onClick={ () => openModal(truckload) }>
+        <div className="bg-tertiary rounded-md px-2 py-2 w-1/5 flex justify-center items-center">
+          <img src={ iconsMap[truckload.truck_body] } alt={ truckload.truck_body }></img>
+        </div>
+        <div className="w-4/5 flex flex-col justify-center items-start ml-2 text-xs uppercase font-medium text-left">
+          <p>
+            { truckload.company }
+          </p>
+          <p>
+            { truckload.title }
+          </p>
+          <p>
+            { truckload.weight }
+          </p>  
+          <p>
+            { truckload.origin }
+          </p>
+          <p>
+            { truckload.destination }
+          </p>
         </div>
       </button>
     );
