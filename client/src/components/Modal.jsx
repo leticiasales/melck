@@ -32,6 +32,9 @@ class Modal extends Component {
     const { closeModal, truckload } = this.props;
     const showHideClassName = truckload ? "modal block" : "modal hidden";
 
+    const phone = process.env.REACT_APP_WPP_PHONE;
+    const message = encodeURI(process.env.REACT_APP_WPP_MESSAGE);
+
     return (
     <div className={ showHideClassName }>
       <section className="modal-main w-100 sm:w-75 min-w-full sm:min-w-max rounded-3xl px-4 py-4">
@@ -149,12 +152,12 @@ class Modal extends Component {
             </div>
           </div>
           <div className="flex justify-center">
-            <button className="flex cursor-pointer bg-tertiary rounded-md px-12 sm:px-20 lg:px-20 py-2 hover:opacity-80">
+            <a href={ `https://api.whatsapp.com/send/?phone=${ phone }&text=${ message + truckload.title }&app_absent=0` } className="flex cursor-pointer bg-tertiary rounded-md px-12 sm:px-20 lg:px-20 py-2 hover:opacity-80" target="_blank" rel="noreferrer">
               <span className="text-md md:text-xl text-white font-semibold mr-4">
                 Carregar este frete
               </span>
-              <img alt="ícone whatsapp" src={ whatsIcon } className="w-6"></img>
-            </button>
+              <img alt="Ícone whatsapp" src={ whatsIcon } className="w-6"></img>
+            </a>
           </div>
         </div>
       </section>
