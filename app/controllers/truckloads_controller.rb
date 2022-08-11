@@ -3,9 +3,19 @@ class TruckloadsController < ApplicationController
 
   # GET /truckloads
   def index
-    @truckloads = Truckload.all
+    @truckloads = Truckload.where(nil)
 
-    render json: @truckloads
+    filtering_params(params).each do |key, value|
+      @truckloads = @truckloads.public_send("filter_by_#{key}", value) if value.present?
+    end
+
+    @truckloads = @truckloads.page(params[:page]).order('created_at DESC')
+
+    render json: {
+      truckloads: @truckloads,
+      page: @truckloads.current_page,
+      totalPages: @truckloads.total_pages
+    }
   end
 
   # GET /truckloads/1
@@ -48,4 +58,9 @@ class TruckloadsController < ApplicationController
     def truckload_params
       params.require(:truckload).permit(:title, :weight, :origin, :destination, :company, :charging_time, :delivery_date, :vehicle, :truck_body, :material, :quantity, :total_weight, :price, :need_to_track)
     end
+
+    # A list of the param names that can be used for filtering the Truckload list
+    def filtering_params(params)
+      params.slice(:origin, :destination, :vehicle)
+  end
 end

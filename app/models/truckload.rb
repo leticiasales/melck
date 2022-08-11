@@ -1,5 +1,6 @@
 class Truckload < ApplicationRecord
   before_save :titleize_attributes
+
   validates :title,
             :origin,
             :destination,
@@ -7,6 +8,12 @@ class Truckload < ApplicationRecord
             :delivery_date,
             :vehicle,
             :truck_body, :presence => true
+
+  scope :filter_by_origin, -> (origin) { where origin: origin }
+  scope :filter_by_destination, -> (destination) { where destination: destination }
+  scope :filter_by_vehicle, -> (vehicle) { where vehicle: vehicle }
+
+  self.per_page = 2
 
   private
     def titleize_attributes

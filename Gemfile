@@ -58,3 +58,4 @@ gem 'font-awesome-rails'
 # Custom
 gem 'phony_rails'
 gem 'rest-client'
+gem 'will_paginate', '~> 3.3'
