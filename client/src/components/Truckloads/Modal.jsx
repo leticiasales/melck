@@ -1,15 +1,13 @@
 import React, { Component } from "react";
-import "../Modal.css";
+import { Close, WhatsApp } from '@mui/icons-material';
+import "./Modal.css";
 
-import furgao from "../assets/img/furgao.png"
-import bau from "../assets/img/bau.png"
-import sider from "../assets/img/sider.png"
-import gradeBaixa from "../assets/img/gradeBaixa.png"
-import graneleiro from "../assets/img/graneleiro.png"
-import camaraFria from "../assets/img/camaraFria.png"
-
-import whatsIcon from "../assets/img/whatsapp-icon.svg"
-import close from "../assets/img/close.svg"
+import furgao from "../../assets/img/furgao.png"
+import bau from "../../assets/img/bau.png"
+import sider from "../../assets/img/sider.png"
+import gradeBaixa from "../../assets/img/gradeBaixa.png"
+import graneleiro from "../../assets/img/graneleiro.png"
+import camaraFria from "../../assets/img/camaraFria.png"
 
 class Modal extends Component {
   constructor(props) {
@@ -38,10 +36,10 @@ class Modal extends Component {
     return (
     <div className={ showHideClassName }>
       <section className="modal-main w-100 sm:w-75 min-w-full sm:min-w-max rounded-3xl px-4 py-4">
-        <div className="border-2 rounded-3xl border-tertiary px-3 py-2">
+        <div className="flex flex-col border-2 rounded-3xl border-tertiary px-3 py-2">
           <div className="absolute right-2 top-2">
-            <button onClick={ closeModal } type="button" className="relative w-7 h-7 px-2 rounded-2xl bg-tertiary top-0 right-0 hover:opacity-90">
-              <img src={ close } alt="ícone de fechar modal"></img>
+            <button onClick={ closeModal } type="button" className="relative flex justify-center items-center text-white p-1 rounded-2xl bg-tertiary top-0 right-0 hover:opacity-90">
+              <Close />
             </button>
           </div>
           <div className="flex mt-4">
@@ -151,14 +149,16 @@ class Modal extends Component {
               </div>
             </div>
           </div>
-          <div className="flex justify-center">
-            <a href={ `https://api.whatsapp.com/send/?phone=${ phone }&text=${ message + truckload.title }&app_absent=0` } className="flex cursor-pointer bg-tertiary rounded-md px-12 sm:px-20 lg:px-20 py-2 hover:opacity-80" target="_blank" rel="noreferrer">
-              <span className="text-md md:text-xl text-white font-semibold mr-4">
-                Carregar este frete
-              </span>
-              <img alt="Ícone whatsapp" src={ whatsIcon } className="w-6"></img>
-            </a>
-          </div>
+          <a
+            href={ `https://api.whatsapp.com/send/?phone=${ phone }&text=${ message + truckload.title }&app_absent=0` }
+            className="flex justify-center items-center text-white font-semibold mx-auto cursor-pointer bg-tertiary rounded-md px-12 sm:px-20 lg:px-20 py-2 hover:opacity-80 w-auto"
+            target="_blank" rel="noreferrer"
+          >
+            <span className="text-md md:text-xl mr-4">
+              Carregar este frete
+            </span>
+            <WhatsApp color="white" />
+          </a>
         </div>
       </section>
     </div>

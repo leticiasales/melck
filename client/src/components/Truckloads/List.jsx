@@ -14,7 +14,7 @@ import {
 } from '@mui/icons-material';
 
 import Item from "./Item";
-import Modal from "../Modal";
+import Modal from "./Modal";
 
 import "./List.css";
 
