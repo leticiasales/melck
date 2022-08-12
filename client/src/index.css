@@ -69,6 +69,18 @@ code {
   background: rgba(0, 0, 0, 0.4);
 }
 
+.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border: 1px solid black !important;
+}
+
+.MuiOutlinedInput-root .MuiAutocomplete-input {
+  color: black;
+}
+
+.MuiOutlinedInput-root .MuiAutocomplete-input::placeholder {
+  opacity: 0.6;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

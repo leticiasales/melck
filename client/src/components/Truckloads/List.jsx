@@ -16,8 +16,6 @@ import {
 import Item from "./Item";
 import Modal from "./Modal";
 
-import "./List.css";
-
 import truckloadListBg from "../../assets/img/truckload-list-bg.png"
 
 const vehicleOptions = ["Van", "Toco", "Truck", "Bitruck", "Carreta", "Carreta Ls", "Vanderleia", "Bitrem"];
