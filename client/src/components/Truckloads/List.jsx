@@ -167,7 +167,7 @@ class TruckloadsList extends Component {
         </div>
         <div className="bg-white pt-2 grow flex flex-col justify-center items-center">
           { loading ?
-            <CircularProgress /> :
+            <CircularProgress color="tertiary" /> :
             <>
               <ul className="w-full bg-white list-style-none grow">
                 {
