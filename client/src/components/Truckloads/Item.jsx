@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import NumberFormat from "react-number-format";
 
 import furgao from "../../assets/img/furgao.png"
 import bau from "../../assets/img/bau.png"
@@ -7,27 +8,19 @@ import gradeBaixa from "../../assets/img/gradeBaixa.png"
 import graneleiro from "../../assets/img/graneleiro.png"
 import camaraFria from "../../assets/img/camaraFria.png"
 
-// importar todos os ícones
+const iconsMap = {
+  "Furgão": furgao,
+  "Baú": bau,
+  "Sider": sider,
+  "Grade Baixa": gradeBaixa,
+  "Graneleiro": graneleiro,
+  "Câmara Fria": camaraFria,
+  "Prancha": furgao,
+}
 
 class Item extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      iconsMap: {
-        "Furgão": furgao,
-        "Baú": bau,
-        "Sider": sider,
-        "Grade Baixa": gradeBaixa,
-        "Graneleiro": graneleiro,
-        "Câmara Fria": camaraFria,
-        "Prancha": furgao,
-      }
-    };
-  }
-
   render() {
     const { truckload, openModal } = this.props;
-    const { iconsMap } = this.state;
 
     return (
       <button className="flex flex-start sm:max-w-sm md:max-w-lg mx-4 sm:mx-auto my-2 py-4 px-4 border-2 rounded-md border-tertiary hover:bg-gray-100" onClick={ () => openModal(truckload) }>
@@ -42,8 +35,8 @@ class Item extends Component {
             { truckload.title }
           </p>
           <p>
-            { truckload.weight }
-          </p>  
+            <NumberFormat value={ truckload?.total_weight } thousandSeparator="." decimalSeparator="," suffix=" kg" isNumericString={ true } decimalScale={ 3 } />
+          </p>
           <p>
             { truckload.origin }
           </p>
