@@ -20,6 +20,8 @@ import "./List.css";
 
 import truckloadListBg from "../../assets/img/truckload-list-bg.png"
 
+const vehicleOptions = ["Van", "Toco", "Truck", "Bitruck", "Carreta", "Carreta Ls", "Vanderleia", "Bitrem"];
+    
 class TruckloadsList extends Component {
   constructor(props) {
     super(props);
@@ -103,7 +105,6 @@ class TruckloadsList extends Component {
   }
 
   render() {
-    const vehicleOptions = ["Van", "Toco", "Truck", "Bitruck", "Carreta", "Carreta Ls", "Vanderleia", "Bitrem"];
     const { cities, loading, modalTruckload, page, totalPages, truckloads} = this.state;
 
     return (

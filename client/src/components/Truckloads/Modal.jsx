@@ -9,24 +9,18 @@ import gradeBaixa from "../../assets/img/gradeBaixa.png"
 import graneleiro from "../../assets/img/graneleiro.png"
 import camaraFria from "../../assets/img/camaraFria.png"
 
-class Modal extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      iconsMap: {
-        "Furgão": furgao,
-        "Baú": bau,
-        "Sider": sider,
-        "Grade Baixa": gradeBaixa,
-        "Graneleiro": graneleiro,
-        "Câmara Fria": camaraFria,
-        "Prancha": furgao,
-      }
-    };
-  }
+const iconsMap = {
+  "Furgão": furgao,
+  "Baú": bau,
+  "Sider": sider,
+  "Grade Baixa": gradeBaixa,
+  "Graneleiro": graneleiro,
+  "Câmara Fria": camaraFria,
+  "Prancha": furgao,
+}
 
+class Modal extends Component {
   render() {
-    const { iconsMap } = this.state;
     const { closeModal, truckload } = this.props;
     const showHideClassName = truckload ? "modal block" : "modal hidden";
 
@@ -35,7 +29,7 @@ class Modal extends Component {
 
     return (
     <div className={ showHideClassName }>
-      <section className="modal-main w-100 sm:w-75 min-w-full sm:min-w-max rounded-3xl px-4 py-4">
+      <section className="modal-main w-100 h-auto bg-white sm:w-75 min-w-full sm:min-w-max rounded-3xl px-4 py-4 -translate-x-2/4 -translate-y-1/2">
         <div className="flex flex-col border-2 rounded-3xl border-tertiary px-3 py-2">
           <div className="absolute right-2 top-2">
             <button onClick={ closeModal } type="button" className="relative flex justify-center items-center text-white p-1 rounded-2xl bg-tertiary top-0 right-0 hover:opacity-90">
@@ -44,8 +38,7 @@ class Modal extends Component {
           </div>
           <div className="flex mt-4">
             <div className="bg-tertiary rounded-md px-4 py-4">
-              <img alt="ícone de carga" src={ iconsMap[truckload.truck_body] } className="w-36">
-              </img>
+              <img alt={ truckload.truck_body } src={ iconsMap[truckload.truck_body] } className="w-36" />
             </div>
             <div className="flex flex-col px-4 py-4">
               <span className="text-lg font-semibold">

@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Autocomplete, TextField } from "@mui/material";
 
+const vehicleOptions = ["Van", "Toco", "Truck", "Bitruck", "Carreta", "Carreta Ls", "Vanderleia", "Bitrem"];
+
 class TruckloadsSearch extends Component {
   constructor(props) {
     super(props);
@@ -52,7 +54,6 @@ class TruckloadsSearch extends Component {
   }
 
   render() {
-    const vehicleOptions = ["Van", "Toco", "Truck", "Bitruck", "Carreta", "Carreta Ls", "Vanderleia", "Bitrem", "3/4"];
     const { cities } = this.state;
 
     return (
