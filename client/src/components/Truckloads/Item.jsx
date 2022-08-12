@@ -7,6 +7,7 @@ import sider from "../../assets/img/sider.png"
 import gradeBaixa from "../../assets/img/gradeBaixa.png"
 import graneleiro from "../../assets/img/graneleiro.png"
 import camaraFria from "../../assets/img/camaraFria.png"
+import prancha from "../../assets/img/prancha.png"
 
 const iconsMap = {
   "Furgão": furgao,
@@ -15,7 +16,7 @@ const iconsMap = {
   "Grade Baixa": gradeBaixa,
   "Graneleiro": graneleiro,
   "Câmara Fria": camaraFria,
-  "Prancha": furgao,
+  "Prancha": prancha,
 }
 
 class Item extends Component {
