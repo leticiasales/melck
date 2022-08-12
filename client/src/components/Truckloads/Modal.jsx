@@ -31,38 +31,38 @@ class Modal extends Component {
 
     return (
     <div className={ showHideClassName + " bg-black-transparent top-0 left-0 w-screen h-screen" }>
-      <section className="fixed w-4/5 h-auto top-1/2 left-1/2 bg-white sm:w-75 min-w-full sm:min-w-max rounded-3xl px-4 py-4 -translate-x-2/4 -translate-y-1/2">
+      <section className="fixed w-4/5 md:w-1/2 max-w-md h-auto top-1/2 left-1/2 bg-white sm:w-75 sm:min-w-max rounded-3xl px-4 py-4 -translate-x-2/4 -translate-y-1/2">
         <div className="flex flex-col border-2 rounded-3xl border-tertiary px-3 py-2">
           <div className="absolute right-2 top-2">
             <button onClick={ closeModal } type="button" className="relative flex justify-center items-center text-white p-1 rounded-2xl bg-tertiary top-0 right-0 hover:opacity-90">
               <Close />
             </button>
           </div>
-          <div className="flex mt-4">
-            <div className="bg-tertiary rounded-md px-4 py-4">
+          <div className="flex flex-col sm:flex-row mt-4">
+            <div className="flex justify-center bg-tertiary rounded-md px-4 py-2 sm:py-4">
               <img alt={ truckload.truck_body } src={ iconsMap[truckload.truck_body] } className="w-36" />
             </div>
-            <div className="flex flex-col px-4 py-4">
-              <span className="text-lg font-semibold">
+            <div className="flex flex-col px-1 sm:px-4 py-4">
+              <span className="text-lg font-semibold uppercase">
                 { truckload?.company }
               </span>
-              <span className="text-lg font-semibold">
+              <span className="text-lg font-semibold uppercase">
                 { truckload?.material }
               </span>
-              <span className="text-lg font-semibold">
+              <span className="text-lg font-semibold uppercase">
                 <NumberFormat value={ truckload?.total_weight } displayType="text" thousandSeparator="." decimalSeparator="," suffix=" kg" isNumericString={ true } decimalScale={ 3 } />
               </span>
-              <span className="text-lg font-semibold">
+              <span className="text-lg font-semibold uppercase">
                 { truckload?.origin }
               </span>
-              <span className="text-lg font-semibold">
+              <span className="text-lg font-semibold uppercase">
                 { truckload?.destination }
               </span>
             </div>
           </div>
           <div className="mx-0 sm:mx-10 mt-6 mb-4">
             <div className="mb-4">
-              <div className="text-sm">
+              <div className="text-xs font-semibold uppercase">
                 <span className="font-bold mr-2">
                   Hora limite para carregamento: 
                 </span>
@@ -70,7 +70,7 @@ class Modal extends Component {
                   { chargingTime }
                 </span>
               </div>
-              <div className="text-sm font-semibold">
+              <div className="text-xs font-semibold uppercase">
                 <span className="font-bold mr-2">
                   Data de entrega: 
                 </span>
@@ -80,7 +80,7 @@ class Modal extends Component {
               </div>
             </div>
             <div className="mb-4">
-              <div className="text-sm font-semibold">
+              <div className="text-xs font-semibold uppercase">
                 <span className="font-bold mr-2">
                   Tipo de veículo: 
                 </span>
@@ -88,7 +88,7 @@ class Modal extends Component {
                   { truckload?.vehicle }
                 </span>
               </div>
-              <div className="text-sm font-semibold">
+              <div className="text-xs font-semibold uppercase">
                 <span className="font-bold mr-2">
                   Tipo de carroceria: 
                 </span>
@@ -98,7 +98,7 @@ class Modal extends Component {
               </div>
             </div>
             <div className="mb-4">
-              <div className="text-sm font-semibold">
+              <div className="text-xs font-semibold uppercase">
                 <span className="font-bold mr-2">
                   Qual é o material: 
                 </span>
@@ -108,7 +108,7 @@ class Modal extends Component {
               </div>
             </div>
             <div className="mb-4">
-              <div className="text-sm font-semibold">
+              <div className="text-xs font-semibold uppercase">
                 <span className="font-bold mr-2">
                   Quantidade: 
                 </span>
@@ -116,7 +116,7 @@ class Modal extends Component {
                   { truckload?.quantity }
                 </span>
               </div>
-              <div className="text-sm font-semibold">
+              <div className="text-xs font-semibold uppercase">
                 <span className="font-bold mr-2">
                   Peso total: 
                 </span>
@@ -126,7 +126,7 @@ class Modal extends Component {
               </div>
             </div>
             <div>
-              <div className="text-sm font-semibold">
+              <div className="text-xs font-semibold uppercase">
                 <span className="font-bold mr-2">
                   Valor da mercadoria: 
                 </span>
@@ -138,10 +138,10 @@ class Modal extends Component {
           </div>
           <a
             href={ `https://api.whatsapp.com/send/?phone=${ phone }&text=${ message + truckload.title }&app_absent=0` }
-            className="flex justify-center items-center text-white font-semibold mx-auto cursor-pointer bg-tertiary rounded-md px-12 sm:px-20 lg:px-20 py-2 hover:opacity-80 w-auto"
+            className="flex justify-center items-center text-white font-semibold sm:w-2/3 px-4 py-2 sm:px-2 mx-auto cursor-pointer bg-tertiary rounded-md hover:opacity-80"
             target="_blank" rel="noreferrer"
           >
-            <span className="text-md md:text-xl mr-4">
+            <span className="text-md mr-4">
               Carregar este frete
             </span>
             <WhatsApp color="white" />
