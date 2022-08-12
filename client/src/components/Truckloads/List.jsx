@@ -110,7 +110,7 @@ class TruckloadsList extends Component {
     return (
       <>
         <div id="banner" className="pt-3 flex justify-center">
-          <img src={ truckloadListBg } alt="Banner" className="-mt-20 px-4 max-w-5xl"></img>
+          <img src={ truckloadListBg } alt="Banner" className="max-w-xl md:max-w-5xl -mt-20 md:px-4"></img>
         </div>
         <div className="bg-secondary py-12">
           <form className="max-w-5xl mx-auto">
@@ -171,7 +171,7 @@ class TruckloadsList extends Component {
           { loading ?
             <CircularProgress /> :
             <>
-              <ul className="w-full bg-white list-style-none">
+              <ul className="w-full bg-white list-style-none grow">
                 {
                   truckloads.map((truckload) => {
                     return <li className="text-center" key={ truckload.id }>
