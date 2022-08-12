@@ -13,7 +13,7 @@ class Truckload < ApplicationRecord
   scope :filter_by_destination, -> (destination) { where destination: destination }
   scope :filter_by_vehicle, -> (vehicle) { where vehicle: vehicle }
 
-  self.per_page = 2
+  self.per_page = 5
 
   private
     def titleize_attributes
