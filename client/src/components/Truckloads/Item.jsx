@@ -34,8 +34,8 @@ class Item extends Component {
           <p>
             { truckload.title }
           </p>
-          <p>
-            <NumberFormat value={ truckload?.total_weight } thousandSeparator="." decimalSeparator="," suffix=" kg" isNumericString={ true } decimalScale={ 3 } />
+          <p className="lowercase">
+            <NumberFormat value={ truckload?.total_weight } displayType="text" thousandSeparator="." decimalSeparator="," suffix=" kg" isNumericString={ true } decimalScale={ 3 } />
           </p>
           <p>
             { truckload.origin }

@@ -50,7 +50,7 @@ class Modal extends Component {
                 { truckload?.material }
               </span>
               <span className="text-lg font-semibold">
-                <NumberFormat value={ truckload?.total_weight } thousandSeparator="." decimalSeparator="," suffix=" kg" isNumericString={ true } decimalScale={ 3 } />
+                <NumberFormat value={ truckload?.total_weight } displayType="text" thousandSeparator="." decimalSeparator="," suffix=" kg" isNumericString={ true } decimalScale={ 3 } />
               </span>
               <span className="text-lg font-semibold">
                 { truckload?.origin }
@@ -121,7 +121,7 @@ class Modal extends Component {
                   Peso total: 
                 </span>
                 <span className="font-medium">
-                  <NumberFormat value={ truckload?.total_weight } thousandSeparator="." decimalSeparator="," suffix=" kg" isNumericString={ true } decimalScale={ 3 } />
+                  <NumberFormat value={ truckload?.total_weight } displayType="text" thousandSeparator="." decimalSeparator="," suffix=" kg" isNumericString={ true } decimalScale={ 3 } />
                 </span>
               </div>
             </div>
@@ -131,7 +131,7 @@ class Modal extends Component {
                   Valor da mercadoria: 
                 </span>
                 <span className="font-medium">
-                  <NumberFormat value={ truckload?.price } thousandSeparator="." decimalSeparator="," prefix="R$" isNumericString={ true } decimalScale={ 2 } />
+                  <NumberFormat value={ truckload?.price } displayType="text" thousandSeparator="." decimalSeparator="," prefix="R$" isNumericString={ true } decimalScale={ 2 } />
                 </span>
               </div>
             </div>

@@ -2,8 +2,12 @@ import axios from "axios";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Autocomplete, TextField } from "@mui/material";
+import { createFilterOptions } from '@mui/material/Autocomplete';
 
 const vehicleOptions = ["Van", "Toco", "Truck", "Bitruck", "Carreta", "Carreta Ls", "Vanderleia", "Bitrem"];
+const filterOptions = createFilterOptions({
+  matchFrom: 'start',
+});
 
 class TruckloadsSearch extends Component {
   constructor(props) {
@@ -70,6 +74,7 @@ class TruckloadsSearch extends Component {
               required
               autoComplete
               className="appearance-none w-full block mb-3 leading-tight"
+              filterOptions={ filterOptions }
               options={ cities }
               onChange={(event, value) => this.setState({ origin: value })}
               renderInput={(params) =>
@@ -84,6 +89,7 @@ class TruckloadsSearch extends Component {
               name="destination"
               autoComplete
               className="appearance-none w-full block text-black leading-tight"
+              filterOptions={ filterOptions }
               options={ cities }
               onChange={(event, value) => this.setState({ destination: value })}
               renderInput={(params) =>
@@ -101,6 +107,7 @@ class TruckloadsSearch extends Component {
                 name="vehicle"
                 required
                 className="appearance-none w-full block text-black leading-tight"
+                filterOptions={ filterOptions }
                 options={ vehicleOptions }
                 onChange={(event, value) => this.setState({ vehicle: value })}
                 renderInput={(params) =>
