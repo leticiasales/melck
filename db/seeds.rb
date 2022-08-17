@@ -21,7 +21,7 @@ csv.each do |row|
   d.vehicle = row["VEICULO"]
   d.truck_body = row["CARROCERIA"]
   d.truck_size = row["TAMANHO"]
-  d.tracker = row["RASTREADOR"]
+  d.tracker = row["RASTREADOR"] || "Não Possui"
   d.origin = city ? "#{city.name} - #{city.uf}" : row["CIDADE DE ORIGEM"]
   d.favorite_destination = row["ROTAS QUE TRABALHA"]
   d.save
