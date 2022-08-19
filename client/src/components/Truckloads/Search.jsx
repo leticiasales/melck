@@ -31,17 +31,6 @@ class TruckloadsSearch extends Component {
       .catch((error) => console.log(error));
   }
 
-  search = (e) => {
-    e.preventDefault();
-
-    const params = { };
-
-    this.props.router.push({
-      pathname: '/cargas',
-      params
-    })
-  }
-
   urlWithParams() {
     const { origin, destination, vehicle } = this.state;
 
