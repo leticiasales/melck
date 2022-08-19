@@ -5,15 +5,16 @@ import HeaderLogo from "../assets/img/header-logo.png"
 
 function Header() {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
-    <header className="container flex justify-center relative w-screen mb-8 max-w-4xl h-20">
-      <Link to="/" className="absolute left-0">
+    <header className="container flex lg:justify-center justify-end relative w-screen mb-8 max-w-4xl h-20 lg:px-0 px-6">
+      <Link to="/" className="absolute lg:left-0 left-6">
         <img src={ HeaderLogo } className="h-20" alt="Melck" />
       </Link>
-      { isMobile &&
-        <nav className="flex justify-center items-center text-white font-bold">
+      { isMobile ?
+        <MenuMobile /> :
+        <nav className="flex items-center text-white font-bold">
           <div className="mx-2 px-2 hover:opacity-80">
             <a href="/">
               Blog

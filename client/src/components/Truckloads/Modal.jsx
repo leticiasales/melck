@@ -33,25 +33,19 @@ class Modal extends Component {
     return (
     <div className={ showHideClassName + " bg-black-transparent top-0 left-0 w-screen h-screen" }>
       <section className="fixed w-4/5 md:w-1/2 max-w-md h-auto top-1/2 left-1/2 bg-white sm:w-75 sm:min-w-max rounded-3xl px-4 py-4 -translate-x-2/4 -translate-y-1/2">
-        <div className="flex flex-col border-2 rounded-3xl border-tertiary px-3 py-2">
+        <div className="flex flex-col border-2 rounded-3xl border-tertiary px-4 py-2">
           <div className="absolute right-2 top-2">
             <button onClick={ closeModal } type="button" className="relative flex justify-center items-center text-white p-1 rounded-2xl bg-tertiary top-0 right-0 hover:opacity-90">
               <Close />
             </button>
           </div>
           <div className="flex flex-col sm:flex-row mt-4">
-            <div className="flex justify-center bg-tertiary rounded-md px-4 py-2 sm:py-4">
-              <img alt={ truckload.truck_body } src={ iconsMap[truckload.truck_body] } className="w-36" />
+            <div className="flex justify-center bg-tertiary rounded-md px-2 py-2 sm:py-2">
+              <img alt={ truckload.truck_body } src={ iconsMap[truckload.truck_body] } className="w-28" />
             </div>
-            <div className="flex flex-col px-1 sm:px-4 py-4">
+            <div className="flex flex-col sm:justify-center px-1 sm:px-4 py-4">
               <span className="text-lg font-semibold uppercase">
-                { truckload?.company }
-              </span>
-              <span className="text-lg font-semibold uppercase">
-                { truckload?.material }
-              </span>
-              <span className="text-lg font-semibold uppercase">
-                <NumberFormat value={ truckload?.total_weight } displayType="text" thousandSeparator="." decimalSeparator="," suffix=" kg" isNumericString={ true } decimalScale={ 3 } />
+                { truckload?.title }
               </span>
               <span className="text-lg font-semibold uppercase">
                 { truckload?.origin }
@@ -114,7 +108,7 @@ class Modal extends Component {
                   Quantidade: 
                 </span>
                 <span className="font-medium">
-                  { truckload?.quantity }
+                  <NumberFormat value={ truckload?.quantity } displayType="text" suffix=" unidades" isNumericString={ true } />
                 </span>
               </div>
               <div className="text-xs font-semibold uppercase">
