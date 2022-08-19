@@ -1,22 +1,20 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import './App.css';
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Header from './components/Header';
-import TruckloadsSearch from './components/Truckloads/Search';
-import TruckloadsList from './components/Truckloads/List';
+import Header from "./components/Header";
+import TruckloadsSearch from "./components/Truckloads/Search";
+import TruckloadsList from "./components/Truckloads/List";
 
 function App() {
   return (
-    <div>    
+    <div className="flex flex-col bg-pattern">
       <BrowserRouter>
         <Header />
         <Routes>
           <Route path="/">
-            <Route index />
+            <Route index element={<TruckloadsSearch />}/>
             <Route path="cargas">
-              <Route index element={<TruckloadsSearch />} />
-              <Route path=":category" element={<TruckloadsList />} />
+              <Route index element={<TruckloadsList />} />
             </Route>
           </Route>
         </Routes>

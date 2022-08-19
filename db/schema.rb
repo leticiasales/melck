@@ -74,7 +74,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_01_234609) do
     t.string "material"
     t.integer "quantity"
     t.float "total_weight"
-    t.string "price"
+    t.float "price"
     t.binary "need_to_track"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

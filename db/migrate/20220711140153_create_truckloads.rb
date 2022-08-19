@@ -13,7 +13,7 @@ class CreateTruckloads < ActiveRecord::Migration[7.0]
       t.string :material
       t.integer :quantity
       t.float :total_weight
-      t.string :price
+      t.float :price
       t.binary :need_to_track
 
       t.timestamps

@@ -42,7 +42,7 @@ ActiveAdmin.register Truckload do
   filter :charging_time
   filter :delivery_date
   filter :vehicle, as: :select, collection: ["Van", "Toco", "Truck", "Bitruck", "Carreta", "Carreta Ls", "Vanderleia", "Bitrem", "3/4"]
-  filter :truck_body, as: :select, collection: ["Furgão", "Baú", "Sider", "Grade Baixa", "Graneleiro", "Camada Fria", "Prancha"]
+  filter :truck_body, as: :select, collection: ["Furgão", "Baú", "Sider", "Grade Baixa", "Graneleiro", "Câmara Fria", "Prancha"]
   filter :material
   filter :quantity
   filter :total_weight
@@ -59,7 +59,7 @@ ActiveAdmin.register Truckload do
       f.input :charging_time, :as => :time_picker
       f.input :delivery_date, :as => :date_picker
       f.input :vehicle, as: :select, collection: ["Van", "Toco", "Truck", "Bitruck", "Carreta", "Carreta Ls", "Vanderleia", "Bitrem", "3/4"]
-      f.input :truck_body, as: :select, collection: ["Furgão", "Baú", "Sider", "Grade Baixa", "Graneleiro", "Camada Fria", "Prancha"]
+      f.input :truck_body, as: :select, collection: ["Furgão", "Baú", "Sider", "Grade Baixa", "Graneleiro", "Câmara Fria", "Prancha"]
       f.input :material
       f.input :quantity
       f.input :total_weight
