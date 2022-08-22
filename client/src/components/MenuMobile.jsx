@@ -47,7 +47,7 @@ function MenuMobile() {
         </List>
       </Drawer>
       <div className="flex items-center">
-        <IconButton onClick={() => setOpenDrawer(!openDrawer)} className="h-max">
+        <IconButton onClick={() => setOpenDrawer(!openDrawer)} className="h-max text-white">
           <Menu />
         </IconButton>
       </div>
