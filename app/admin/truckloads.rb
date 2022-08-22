@@ -20,6 +20,7 @@ ActiveAdmin.register Truckload do
       row :origin
       row :destination
       row :company
+      row :charging_date
       row :charging_time
       row :delivery_date
       row :vehicle
@@ -39,6 +40,7 @@ ActiveAdmin.register Truckload do
   filter :origin
   filter :destination
   filter :company
+  filter :charging_date
   filter :charging_time
   filter :delivery_date
   filter :vehicle, as: :select, collection: ["Van", "Toco", "Truck", "Bitruck", "Carreta", "Carreta Ls", "Vanderleia", "Bitrem", "3/4"]
@@ -56,6 +58,7 @@ ActiveAdmin.register Truckload do
       f.input :origin
       f.input :destination
       f.input :company
+      f.input :charging_date, :as => :date_picker
       f.input :charging_time, :as => :time_picker
       f.input :delivery_date, :as => :date_picker
       f.input :vehicle, as: :select, collection: ["Van", "Toco", "Truck", "Bitruck", "Carreta", "Carreta Ls", "Vanderleia", "Bitrem", "3/4"]

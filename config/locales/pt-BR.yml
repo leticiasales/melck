@@ -290,6 +290,7 @@ pt-BR:
         origin: Origem
         destination: Destino
         company: Empresa
+        charging_date: Data limite
         charging_time: Hora limite
         delivery_date: Data de Entrega
         vehicle: Veículo

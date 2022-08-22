@@ -24,6 +24,7 @@ class Modal extends Component {
   render() {
     const { closeModal, truckload } = this.props;
     const showHideClassName = truckload ? "fixed" : "hidden";
+    const chargingDate = truckload && new Date(truckload.charging_date).toLocaleDateString('pt-BR');
     const chargingTime = truckload && new Date(truckload.charging_time).toLocaleTimeString('pt-BR', { hour: '2-digit', minute:'2-digit' });
     const deliveryDate = truckload && new Date(truckload.delivery_date).toLocaleDateString('pt-BR');
 
@@ -57,6 +58,14 @@ class Modal extends Component {
           </div>
           <div className="mx-0 sm:mx-10 mt-6 mb-4">
             <div className="mb-4">
+              <div className="text-xs font-semibold uppercase">
+                <span className="font-bold mr-2">
+                  Data limite para carregamento: 
+                </span>
+                <span className="font-medium">
+                  { chargingDate }
+                </span>
+              </div>
               <div className="text-xs font-semibold uppercase">
                 <span className="font-bold mr-2">
                   Hora limite para carregamento: 

@@ -6,6 +6,7 @@ class CreateTruckloads < ActiveRecord::Migration[7.0]
       t.string :origin
       t.string :destination
       t.string :company
+      t.date :charging_date
       t.time :charging_time
       t.date :delivery_date
       t.string :vehicle
