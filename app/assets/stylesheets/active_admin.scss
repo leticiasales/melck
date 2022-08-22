@@ -43,6 +43,39 @@
   width: calc(100% - 200px);
 }
 
+form.filter_form {
+  width: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+form.filter_form .filter_form_field {
+  width: 49%;
+}
+
+form.filter_form .filter_form_field.select_and_search select {
+  width: 49%;
+}
+
+form.filter_form .filter_form_field.filter_date_range input[type="text"] {
+  width: 49%;
+}
+
 form.filter_form .filter_form_field.select_and_search input[type="text"] {
-  width: 200px;
+  width: 48%;
+  margin-left: 2%;
+}
+
+form.filter_form .filter_form_field.filter_date_range input[type="text"] + input {
+  margin-left: 1%;
+  width: 48%;
+}
+
+.sidebar_section select {
+  width: 100%;
+}
+
+html .sidebar_section.panel form .buttons {
+  width: 100vh;
 }
