@@ -140,3 +140,7 @@ html #header ul.tabs > li:hover > a, html #header ul.tabs > li.current > a {
 #title_bar .action_items span.action_item > a, #title_bar .action_items span.action_item > .dropdown_menu > a {
   padding: 12px 17px 11px;
 }
+
+html #utility_nav li:hover a {
+  color: #F7931E !important;
+}
