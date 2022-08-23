@@ -4,6 +4,7 @@ class Truckload < ApplicationRecord
   validates :title,
             :origin,
             :destination,
+            :charging_date,
             :charging_time,
             :delivery_date,
             :vehicle,

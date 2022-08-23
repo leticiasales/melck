@@ -60,7 +60,7 @@ class Modal extends Component {
             <div className="mb-4">
               <div className="text-xs font-semibold uppercase">
                 <span className="font-bold mr-2">
-                  Data limite para carregamento: 
+                  Data de embarque: 
                 </span>
                 <span className="font-medium">
                   { chargingDate }

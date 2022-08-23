@@ -67,7 +67,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_01_234609) do
     t.string "origin"
     t.string "destination"
     t.string "company"
-    t.time "charging_date"
+    t.date "charging_date"
     t.time "charging_time"
     t.date "delivery_date"
     t.string "vehicle"
