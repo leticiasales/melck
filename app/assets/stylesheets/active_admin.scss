@@ -79,3 +79,64 @@ form.filter_form .filter_form_field.filter_date_range input[type="text"] + input
 html .sidebar_section.panel form .buttons {
   width: 100vh;
 }
+
+html form input[type="submit"],
+html a.button, html a.button:link,
+html a.button:visited {
+  background: #F7931E;
+}
+
+#header.header .site_title {
+  background: #F7931E;
+  padding: 2px;
+}
+
+#diplay-filter {
+  background-color: #F7931E;
+  border: solid 1px #F7931E;
+}
+
+html #title_bar .action_items a {
+  background: #F7931E !important;
+}
+
+html #active_admin_content .table_tools_segmented_control li.selected a {
+  background-color: #F7931E;
+}
+
+html form input[type="submit"]:hover,
+html a.button:hover,
+html a.button:link:hover,
+html a.button:visited:hover,
+html #title_bar .action_items a:hover {
+  background: #F7931E !important;
+}
+
+.panel h3, .sidebar_section.panel h3 {
+  color: white !important;
+}
+
+html .panel > h3, html .sidebar_section.panel > h3 {
+ background: #F7931E;
+}
+
+html .download_links a {
+  color: #F7931E;
+}
+
+.site_title {
+  margin-bottom: 2px;
+}
+
+table.index_table td {
+  padding: 10px 12px 6px 12px;
+  vertical-align: middle;
+}
+
+html #header ul.tabs > li:hover > a, html #header ul.tabs > li.current > a {
+  background: #F7931E;
+}
+
+#title_bar .action_items span.action_item > a, #title_bar .action_items span.action_item > .dropdown_menu > a {
+  padding: 12px 17px 11px;
+}
