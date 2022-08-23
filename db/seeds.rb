@@ -43,6 +43,7 @@ if Rails.env.development?
     d.origin = orig ? "#{orig.name} - #{orig.uf}" : row["Origem"]
     d.destination = dest ? "#{dest.name} - #{dest.uf}" : row["Destino"]
     d.company = row["Empresa"]
+    d.charging_date = row["Data carregamento"]
     d.charging_time = row["Hora carregamento"]
     d.delivery_date = row["Data de entrega"]
     d.vehicle = row["Veículo"]

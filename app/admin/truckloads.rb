@@ -1,5 +1,19 @@
 ActiveAdmin.register Truckload do
-  permit_params :title, :weight, :origin, :destination, :company, :charging_time, :delivery_date, :vehicle, :truck_body, :material, :quantity, :total_weight, :price, :need_to_track
+  permit_params :title,
+                :weight,
+                :origin,
+                :destination,
+                :company,
+                :charging_date,
+                :charging_time,
+                :delivery_date,
+                :vehicle,
+                :truck_body,
+                :material,
+                :quantity,
+                :total_weight,
+                :price,
+                :need_to_track
 
   index do
     selectable_column

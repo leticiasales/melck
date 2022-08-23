@@ -6,6 +6,7 @@ one:
   origin: MyString
   destiny: MyString
   company: MyString
+  charging_date: 2022-07-11
   charging_time: 2022-07-11 14:01:53
   delivery_date: 2022-07-11
   vehicle: MyString
@@ -22,6 +23,7 @@ two:
   origin: MyString
   destiny: MyString
   company: MyString
+  charging_date: 2022-07-11
   charging_time: 2022-07-11 14:01:53
   delivery_date: 2022-07-11
   vehicle: MyString
