@@ -1,5 +1,4 @@
 class Driver < ApplicationRecord
-  phony_normalize :phone, default_country_code: 'BR'
   before_save :titleize_attributes
 
   validates :name,

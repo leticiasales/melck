@@ -5,9 +5,7 @@ ActiveAdmin.register Driver do
     selectable_column
     id_column
     column :name
-    column :phone do |t|
-      t.phone.phony_formatted!(format: :international) unless t.phone.blank?
-    end
+    column :phone
     column :vehicle
     column :truck_body
     actions
@@ -16,9 +14,7 @@ ActiveAdmin.register Driver do
   show do 
     attributes_table do
       row :name
-      row :phone do |t|
-        t.phone.phony_formatted!(format: :international) unless t.phone.blank?
-      end
+      row :phone
       row :vehicle
       row :truck_body
       row :truck_size
