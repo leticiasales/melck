@@ -145,3 +145,20 @@ html #header ul.tabs > li:hover > a, html #header ul.tabs > li.current > a {
 html #utility_nav li:hover a {
   color: #F7931E !important;
 }
+
+#active_admin_content #sidebar {
+  margin-left: -658px !important;
+  margin-top: -98px !important;
+}
+
+html .sidebar_section.panel {
+  z-index: 801 !important;
+}
+
+#filters_sidebar_section {
+  z-index: 9999 !important;
+}
+
+.section, .panel, .sidebar_section.panel {
+  margin-bottom: 0 !important;
+}
