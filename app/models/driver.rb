@@ -4,9 +4,7 @@ class Driver < ApplicationRecord
   validates :name,
             :vehicle,
             :truck_body,
-            :origin,
-            :tracker,
-            :phone, :presence => true
+            :presence => true
 
   validates :phone,
             :presence => true,
