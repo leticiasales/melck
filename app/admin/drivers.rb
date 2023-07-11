@@ -1,4 +1,6 @@
 ActiveAdmin.register Driver do
+    active_admin_import validate: true
+
   permit_params :name, :phone, :vehicle, :truck_body, :truck_size, :tracker, :origin, :favorite_destination, :observations
 
   index do

@@ -4,11 +4,13 @@ class Driver < ApplicationRecord
   validates :name,
             :vehicle,
             :truck_body,
-            :origin,
-            :tracker,
-            :phone, :presence => true
+            :presence => true
 
-  validates :phone, :presence => true, :uniqueness => true
+  validates :phone,
+            :presence => true,
+            :uniqueness => true,
+            :format => { :with => /\A(\+1)?[0-9]*\z/ },
+            length: { maximum: 11 }
 
   private
     def titleize_attributes

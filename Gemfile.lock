@@ -1,3 +1,13 @@
+GIT
+  remote: https://github.com/activeadmin-plugins/active_admin_import.git
+  revision: 9ca311a774b076765cc3eb9f4a20beb470abbdd3
+  specs:
+    active_admin_import (5.0.0)
+      activeadmin (>= 1.0.0)
+      activerecord-import (>= 0.27)
+      rchardet (>= 1.6)
+      rubyzip (>= 1.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -64,6 +74,8 @@ GEM
     activerecord (7.0.3)
       activemodel (= 7.0.3)
       activesupport (= 7.0.3)
+    activerecord-import (1.4.1)
+      activerecord (>= 4.2)
     activestorage (7.0.3)
       actionpack (= 7.0.3)
       activejob (= 7.0.3)
@@ -216,6 +228,7 @@ GEM
       activerecord (>= 6.1.5)
       activesupport (>= 6.1.5)
       i18n
+    rchardet (1.8.0)
     reline (0.3.1)
       io-console (~> 0.5)
     responders (3.0.1)
@@ -227,6 +240,7 @@ GEM
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     ruby2_keywords (0.0.5)
+    rubyzip (2.3.2)
     sassc (2.4.0)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
@@ -264,6 +278,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_admin_flat_skin
+  active_admin_import!
   activeadmin
   bootsnap
   debug
@@ -284,4 +299,4 @@ RUBY VERSION
    ruby 3.0.4p208
 
 BUNDLED WITH
-   2.3.20
+   2.4.15

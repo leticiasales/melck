@@ -54,6 +54,7 @@ gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'sassc-rails'
 gem 'active_admin_flat_skin'
 gem 'font-awesome-rails'
+gem "active_admin_import" , github: "activeadmin-plugins/active_admin_import"
 
 # Custom
 gem 'phony_rails'
